@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error" packages="logging.appender">
+
+	<Appenders>
+
+		<RollingRandomAccessFile name="FileAppender"
+			fileName="logs/xtp-data-service.log" immediateFlush="false"
+			append="true" filePattern="logs/xtp-data-service.log-%d{MM-dd-yyyy}">
+			<PatternLayout
+				pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%throwable%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingRandomAccessFile>
+		
+		
+		<Console name="console" target="SYSTEM_OUT">
+		      <PatternLayout pattern="%msg%throwable %n " />
+		</Console>
+		
+		   <Console name="consoleErr" target="SYSTEM_ERR">
+		      <PatternLayout pattern="%msg%throwable %n " />
+		</Console>
+		<Console name="consoleKafka" target="SYSTEM_OUT">
+		      <PatternLayout pattern="{%d{yyyy-MM-dd HH:mm:ss.SSS} [%p] %c{1} – %m}%n " />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<AsyncLogger name="infoLogger" level="info" includeLocation="false" additivity="false">
+			<Appender-ref ref="console" />
+			<Appender-ref ref="FileAppender" />
+		</AsyncLogger>
+		<AsyncLogger name="debugLogger" level="debug"	additivity="false">
+			<Appender-ref ref="console" />
+			<Appender-ref ref="FileAppender" />
+
+		</AsyncLogger>
+		<AsyncLogger name="warnLogger" level="warn"	additivity="false">
+			<Appender-ref ref="console" />
+			<Appender-ref ref="FileAppender" />
+		</AsyncLogger>
+		<AsyncLogger name="errorLogger" level="error" additivity="false">
+			<Appender-ref ref="consoleErr" />
+			<Appender-ref ref="FileAppender" />
+		</AsyncLogger>
+		<AsyncLogger name="org.apache.kafka" level="warn"	additivity="false">
+		      <AppenderRef ref="consoleKafka"/>
+		</AsyncLogger>	
+	</Loggers>
+</Configuration>
