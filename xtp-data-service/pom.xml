@@ -14,7 +14,7 @@
 	<name>xtp-data-service</name>
 	<description>xtp data service</description>
 	<properties>
-		<grpc-spring-boot-starter.version>4.9.1</grpc-spring-boot-starter.version>
+		<grpc-spring-boot-starter.version>5.1.4</grpc-spring-boot-starter.version>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
