@@ -6,7 +6,7 @@
 		<groupId>bmx</groupId>
 		<artifactId>new</artifactId>
 		<version>1.0</version>
-		<relativePath>../pomNew.xml</relativePath>
+		<relativePath>./pomNew.xml</relativePath>
 	</parent>
 	<groupId>com.bmx.comm</groupId>
 	<artifactId>xtp-data-service</artifactId>
