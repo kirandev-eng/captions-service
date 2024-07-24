@@ -1,0 +1,24 @@
+variables:
+  SEMVER_MAJOR: 0
+  SEMVER_MINOR: 0
+
+
+name: $(SEMVER_MAJOR).$(SEMVER_MINOR).$(Build.BuildId)
+
+trigger:
+  branches:
+    include:
+    - develop
+    - release/*
+  paths:
+    include:
+    - packages/services/xtp-data-service/*
+    - build/*
+    - packages/services/pom.xml
+stages:
+- template: ../../../build/buildJavaImage.yml
+  parameters:
+    services: xtp-data-service
+    semver: $(SEMVER_MAJOR).$(SEMVER_MINOR).$(Build.BuildId)
+    dsckustomizeDir : 
+      - XtpDataService
