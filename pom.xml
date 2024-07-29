@@ -134,6 +134,8 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					                <mainClass>com.bmx.comm.XtpDataServiceApplication</mainClass>
+
 				</configuration>
 			</plugin>
 			
