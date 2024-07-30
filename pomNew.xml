@@ -27,6 +27,11 @@
 			<id>confluent</id>
 			<url>https://packages.confluent.io/maven/</url>
 		</repository>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/johndoe/my-maven-repo</url>
+        </repository>
+
 	</repositories>
 	
 	<properties>
@@ -154,4 +159,11 @@
 			</plugins>
     
 	</build>
+	
+	<distributionManagement>
+  <repository>
+    <id>github</id>
+    <url>https://maven.pkg.github.com/kirandev-eng/artifacts</url>
+  </repository>
+</distributionManagement>
 </project>
