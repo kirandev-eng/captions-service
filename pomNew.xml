@@ -5,7 +5,7 @@
 	<groupId>bmx</groupId>
 	<artifactId>new</artifactId>
 	<packaging>pom</packaging>
-	<version>2.0</version>
+	<version>1.0</version>
 	<name>BMX New</name>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -13,7 +13,7 @@
 		<version>3.2.5</version>
 	</parent>
 	<repositories>
-		<!-- <repository>
+		<repository>
 			<id>CoreComponents</id>
 			<url>https://pkgs.dev.azure.com/intlfcstone/_packaging/CoreComponents/maven/v1</url>
 			<releases>
@@ -22,7 +22,7 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository> -->
+		</repository>
 			<repository>
 			<id>confluent</id>
 			<url>https://packages.confluent.io/maven/</url>
