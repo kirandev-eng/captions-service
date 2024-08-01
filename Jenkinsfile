@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         mavenHome = tool 'jenkins-maven'
-        mavenSettingsFile = 'C:/Users/Kiran/.m2/settings.xml' // Path to your settings.xml file
+        mavenSettingsFile = 'C:/Users/Kiran/.m2/settings2.xml' // Path to your settings.xml file
     }
 
     tools {
