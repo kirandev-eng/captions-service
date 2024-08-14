@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.time.Instant;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 import org.apache.maven.model.Model;
 import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
