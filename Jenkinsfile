@@ -14,9 +14,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir(REPO)
-                script {
-                    bat "${mavenHome}/bin/mvn clean install -DskipTests -s ${mavenSettingsFile}"
+                dir(REPO) {
+                    script {
+                        bat "${mavenHome}/bin/mvn clean install -DskipTests -s ${mavenSettingsFile}"
+                    }
                 }
             }
         }
