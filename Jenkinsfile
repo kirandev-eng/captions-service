@@ -24,18 +24,23 @@ pipeline {
 
         stage('Test') {
             steps {
+			 dir(REPO) {
                 script {
                     bat "${mavenHome}/bin/mvn test -s ${mavenSettingsFile}"
                 }
+				
+			}
             }
         }
 
         stage('Deploy') {
             steps {
+			 dir(REPO) {
                 script {
                     bat "${mavenHome}/bin/mvn jar:jar deploy:deploy -s ${mavenSettingsFile}"
                 }
             }
+			}
         }
     }
 }
